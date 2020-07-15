@@ -1,0 +1,36 @@
+import datetime
+years_of_service=0
+year_running=0
+profit=0
+
+
+def Profit(name,salary,date): 
+    X=input("Enter Name:")
+    name=X
+    Y=input("Enter Salary:")
+    salary=int(Y)
+    Z=input("Enter joining date:dd/mm/yy:")
+    date=Z
+    def time(date,current_time):
+
+      date= date.split("/")
+      current_time = datetime.datetime.now()
+      current_time=current_time.split("-")
+      year_running=int(current_time[0])
+      years_of_service=year_running-int(date[2])
+      
+     
+        
+      
+    if years_of_service<5:
+     profit=salary*(10/100)
+     print(name,profit)
+    if years_of_service>5 and years_of_service<10:
+     profit=salary*(10/100)+5000
+     print(name,profit)
+    if years_of_service>10:
+     profit=salary*(15/100)+15000
+     print(name,profit)
+     
+     
+Profit()
