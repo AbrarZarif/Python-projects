@@ -1,0 +1,24 @@
+def compute_min_refills(distance, tank, dis_array_int):
+    numrefill=0
+    currentrefill=0
+    while currentrefill<=stop:
+     lastrefill=currentrefill
+     while currentrefill<=stop and dis_array_int[currentrefill+1]-dis_array_int[currentrefill]<=tank:
+        currentrefill=currentrefill+1
+    if currentrefill==lastrefill:
+        return -1
+    if currentrefill<=stop:
+        numrefill=numrefill+1
+    return numrefill
+     
+   
+dis_array_int=[]    
+
+distance=int(input())
+tank=int(input())
+stop=int(input())
+dis_array = [int(i) for i in input().split()]
+
+
+
+print(compute_min_refills(distance,tank,dis_array_int))
